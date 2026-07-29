@@ -9,7 +9,26 @@
     <h1>Testing Salesforce MIAW - Test Page 2</h1>
     <p>If configured correctly, the chat launcher will appear in the bottom right corner.</p>
 
-    <!-- PASTE YOUR SALESFORCE EMBEDDED MESSAGING SCRIPT HERE -->
+    <!-- Paste the code snippet right here before the closing </body> tag -->
+    <script type='text/javascript'>
+        function initEmbeddedMessaging() {
+            try {
+                embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+                embeddedservice_bootstrap.init(
+                    '00DbY00000IrubB',
+                    'Bruce_Inbound',
+                    'https://maptara--sb3.sandbox.my.site.com/ESWBruceInbound1785343183050',
+                    {
+                        scrt2URL: 'https://maptara--sb3.sandbox.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
+        };
+    </script>
+    <script type='text/javascript' src='https://maptara--sb3.sandbox.my.site.com/ESWBruceInbound1785343183050/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
 </body>
 </html>
